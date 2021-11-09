@@ -29,7 +29,10 @@ namespace TechJobsOO
             return HashCode.Combine(Id);
         }
 
-        // TODO: Add custom Equals(), GetHashCode(), and ToString() methods.
+        // TODO: Add custom Equals(), GetHashCode(), and ToString() methods.//
     }
+       
 }
-        
+
+
+
