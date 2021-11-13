@@ -15,7 +15,7 @@ namespace TechJobsOO
 
         public PositionType(string value) : this()
         {
-            this.Value = value;
+            Value = value;
         }
 
         public override bool Equals(object obj)
@@ -27,6 +27,11 @@ namespace TechJobsOO
         public override int GetHashCode()
         {
             return HashCode.Combine(Id);
+        }
+
+        public override string ToString()
+        {
+            return Value;
         }
 
         // TODO: Add custom Equals(), GetHashCode(), and ToString() methods.//

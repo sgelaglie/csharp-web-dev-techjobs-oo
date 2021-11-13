@@ -16,17 +16,13 @@ namespace TechJobsTests
             Assert.IsTrue(Job2.Id == Job1.Id + 1);
         }
         [TestMethod]
-        public void TestJobConstractorSetsAllFields()
+        public void TestJobConstructorSetsAllFields()
         {
-            Job testJob = new Job("Product tester",
-                       new Employer("ACME"),
-                       new Location("Desert"),
-                       new PositionType("Quality control"),
-                       new CoreCompetency("Persistence"));
+            Job testJob = new Job("Product tester", new Employer("Acme"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("persistence"));
 
             Assert.IsTrue(testJob.EmployerName.Value == "Acme");
             Assert.IsTrue(testJob.EmployerLocation.Value == "Desert");
-            Assert.IsTrue(testJob.JobType.Value == "quality control");
+            Assert.IsTrue(testJob.JobType.Value == "Quality control");
             Assert.IsTrue(testJob.JobCoreCompetency.Value == "persistence");
         }
         [TestMethod]
@@ -44,13 +40,22 @@ namespace TechJobsTests
                        new CoreCompetency("Persistence"));
 
             Assert.IsFalse(job1.Equals(job2));
-
+          
         }
-
+        [TestMethod]
+        public void TestToString()
+        {
+            Job job1 = new Job("Product tester",
+                       new Employer("ACME"),
+                       new Location("Desert"),
+                       new PositionType("Quality control"),
+                       new CoreCompetency("Persistence"));
+            Assert.AreEqual(job1.ToString(), $"\nID: {job1.Id}\nName: {job1.Name}\nEmployer: {job1.EmployerName} \nLocation: {job1.EmployerLocation} \nPosition Type: {job1.JobType}\nCore Competency: {job1.JobCoreCompetency}");
+            
+        }
     }
 }
 
-    
 
 
 
@@ -61,4 +66,8 @@ namespace TechJobsTests
 
 
 
-    
+
+
+
+
+
